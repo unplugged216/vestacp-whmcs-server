@@ -9,7 +9,14 @@ function vesta_ConfigOptions() {
     return $configarray;
 
 }
-
+/**
+ * function vesta_CreateAccount
+ *
+ * Create a new user account on a server managed with VestaCP. 
+ * This method also sets up ssh access and domain.
+ *
+ * @param array required params An array of paramaters to pass to the v-add-user method on VestaCP.
+ */ 
 function vesta_CreateAccount($params) {
 
     // Execute only if there is assigned server
@@ -98,7 +105,13 @@ function vesta_CreateAccount($params) {
 
     return $result;
 }
-
+/**
+ * function vesta_TerminateAccount
+ *
+ * Terminate a user account on a server managed with VestaCP
+ *
+ * @param array required params An array of paramaters to pass to the v-delete-user method on VestaCP.
+ */ 
 function vesta_TerminateAccount($params) {
 
     // Execute only if there is assigned server
@@ -135,7 +148,13 @@ function vesta_TerminateAccount($params) {
 
     return $result;
 }
-
+/**
+ * function vesta_SuspendAccount
+ *
+ * Suspend a user account on a server managed with VestaCP
+ *
+ * @param array required params An array of paramaters to pass to the v-suspend-user method on VestaCP.
+ */ 
 function vesta_SuspendAccount($params) {
 
     // Execute only if there is assigned server
@@ -172,7 +191,13 @@ function vesta_SuspendAccount($params) {
 
     return $result;
 }
-
+/**
+ * function vesta_UnsuspendAccount
+ *
+ * Un-Suspend a user account on a server managed with VestaCP
+ *
+ * @param array required params An array of paramaters to pass to the v-unsuspend-user method on VestaCP.
+ */ 
 function vesta_UnsuspendAccount($params) {
 
     // Execute only if there is assigned server
@@ -209,7 +234,13 @@ function vesta_UnsuspendAccount($params) {
 
     return $result;
 }
-
+/**
+ * function vesta_ChangePassword
+ *
+ * Change user password on a server managed with VestaCP
+ *
+ * @param array required params An array of paramaters to pass to the v-change-user-password method on VestaCP.
+ */ 
 function vesta_ChangePassword($params) {
 
     // Execute only if there is assigned server
@@ -247,7 +278,13 @@ function vesta_ChangePassword($params) {
     
     return $result;
 }
-
+/**
+ * function vesta_ChangePackage
+ *
+ * Change user package on a server managed with VestaCP
+ *
+ * @param array required params An array of paramaters to pass to the v-change-user-package method on VestaCP.
+ */ 
 function vesta_ChangePackage($params) {
 
     // Execute only if there is assigned server
@@ -285,7 +322,13 @@ function vesta_ChangePackage($params) {
 
     return $result;
 }
-
+/**
+ * function vesta_ClientArea
+ *
+ * Generate a form to allow for an admin from WHMCS to access the users account on VestaCP
+ *
+ * @param array required params An array of paramaters to pass to the v-change-user-package method on VestaCP.
+ */ 
 function vesta_ClientArea($params) {
 
     $code = '<form action="https://'.$params["serverhostname"].':8083/login/" method="post" target="_blank">
@@ -297,7 +340,13 @@ function vesta_ClientArea($params) {
     return $code;
 
 }
-
+/**
+ * function vesta_AdminLink
+ *
+ * Generate a form to allow for an admin from WHMCS to access the admin account on VestaCP
+ *
+ * @param array required params An array of paramaters to pass to the v-change-user-package method on VestaCP.
+ */ 
 function vesta_AdminLink($params) {
 
     $code = '<form action="https://'.$params["serverhostname"].':8083/login/" method="post" target="_blank">
@@ -308,13 +357,25 @@ function vesta_AdminLink($params) {
     return $code;
 
 }
-
+/**
+ * function vesta_LoginLink
+ *
+ * Generate a link to the login page on VestaCP
+ *
+ * @param array required params An array of paramaters to pass to the v-change-user-package method on VestaCP.
+ */ 
 function vesta_LoginLink($params) {
 
     echo "<a href=\"https://".$params["serverhostname"].":8083/login/\" target=\"_blank\" style=\"color:#cc0000\">control panel</a>";
 
 }
-
+/**
+ * function vesta_UsageUpdate
+ *
+ * Pull usage statistics from a VestaCP server
+ *
+ * @param array required params An array of paramaters to pass to the v-change-user-package method on VestaCP.
+ */ 
 function vesta_UsageUpdate($params) {
 
     // Prepare variables
@@ -352,5 +413,4 @@ function vesta_UsageUpdate($params) {
     }
 
 }
-
 ?>
