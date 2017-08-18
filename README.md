@@ -1,0 +1,1 @@
+The WHMCS plugin allows to manage servers running Vesta Control Panel. You can automatically create delete or suspend user accounts. Users are able to change passwords and manage their web/mail/dns domains.
